@@ -1,0 +1,81 @@
+img {
+  width: 60%;
+}
+.particles {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+.homepage {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+.header {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  color: white;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  padding-top: 10px;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+}
+.description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: 5%;
+}
+.about {
+  margin: 2%;
+
+  color: white;
+  padding-left: 10%;
+}
+.cardContainer {
+  display: flex;
+  padding-top: 5%;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-left: 25%;
+}
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 8px 0px blue;
+  border: 1px solid;
+  border-radius: 5px;
+  margin: 3px;
+  padding: 10px;
+  transition: 0.3s;
+
+  width: 100%;
+}
+.card:hover {
+  box-shadow: 10px 5px 8px 10px#888888;
+  cursor: pointer;
+}
+.create {
+  background-color: slateblue;
+  color: white;
+}
+
+.join {
+  background-color: cornflowerblue;
+  color: white;
+}
