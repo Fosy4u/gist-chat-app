@@ -26,19 +26,21 @@ const Homepage = () => {
       </div>
       <div className="main">
         <div className="description">
-          <img src={image} alt="image" />
+          <img className="image" src={image} alt="image" />
           <div className="about">
             <h3>
               A Real-Time Chat Application for testing Socket.IO with React and
-              Nodejs
+              Nodejs.
             </h3>
-            <Link to={"/create"}>
-              <div className="card create container">Create a Chat Room</div>
-            </Link>
-            <Link to={"/join"}>
-              <div className="card join container">Join a Chat Room</div>
-            </Link>
           </div>
+        </div>
+        <div className="cardContainer">
+          <Link to={"/create"}>
+            <div className="card create container">Create a Chat Room</div>
+          </Link>
+          <Link to={"/join"}>
+            <div className="card join container">Join a Chat Room</div>
+          </Link>
         </div>
       </div>
     </div>

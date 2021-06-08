@@ -4,13 +4,11 @@
   margin-left: 100px;
   color: white;
   height: 60%;
-  justify-content: space-between;
 }
 
 .activeContainer {
   display: flex;
   align-items: center;
-  margin-bottom: 50%;
 }
 
 .activeItem {
@@ -35,7 +33,7 @@
   border: 1px solid;
   border-radius: 3px;
   margin: 4%;
-  margin-right: 35%;
+
   padding: 2%;
 }
 .link {
@@ -49,7 +47,7 @@
   align-items: flex-end;
 }
 
-.button {
+.addButton {
   color: #fff !important;
 
   text-decoration: none;
@@ -60,8 +58,16 @@
   border: none;
   width: 30%;
 }
-@media (min-width: 320px) and (max-width: 1200px) {
-  .textContainer {
+
+@media (min-width: 55px) and (max-width: 800px) {
+  .text {
     display: none;
+  }
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+
+    color: white;
+    height: 60%;
   }
 }

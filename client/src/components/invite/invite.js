@@ -15,13 +15,13 @@ const Invite = () => {
   });
 
   return (
-    <div className="joinOuterContainer">
-      <div className="joinInnerContainer">
-        <h1 className="heading">Room {room}</h1>
+    <div className="inviteOuterContainer">
+      <div className="inviteInnerContainer">
+        <h1 className="inviteHeading">Room {room}</h1>
         <div>
           <input
             placeholder="Enter your Name"
-            className="joinInput"
+            className="inviteInput"
             type="text"
             onChange={(event) => setName(event.target.value)}
           />
@@ -32,7 +32,7 @@ const Invite = () => {
               !name || !room ? event.preventDefault() : null
             }
           >
-            <button className="button mt-20" type="submit">
+            <button className="inviteButton mt-20" type="submit">
               {" "}
               Join{" "}
             </button>

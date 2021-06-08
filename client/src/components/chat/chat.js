@@ -7,21 +7,11 @@ import InfoBar from "../infoBar/infoBar";
 import Input from "../input/input";
 import Messages from "../../messages/messages";
 import TextContainer from "../textContainer/textContainer";
-import Particles from "react-particles-js";
-import { useHistory } from "react-router-dom";
 
-/*configuring the param options for the particle component used for the animation on the background*/
-const particlesOptions = {
-  particles: {
-    number: {
-      value: 400,
-      density: {
-        enable: true,
-        value_area: 800,
-      },
-    },
-  },
-};
+import { useHistory } from "react-router-dom";
+import RoomMembers from "../roomMembers/roomMembers";
+import InviteLink from "../inviteLink/inviteLink";
+
 /*chat component that will display real-time chat in the room*/
 let socket;
 const Chat = () => {
@@ -34,6 +24,8 @@ const Chat = () => {
   const [message, setMessage] = useState("");
   /*state to hold all the messages*/
   const [messages, setMessages] = useState([]);
+  const [roomMembers, setRoomMembers] = useState(false);
+  const [invite, setInvite] = useState(false);
   /*Endpoint to the server deployed on Heroku*/
   const ENDPOINT = "https://gist-chatter.herokuapp.com/";
 
@@ -72,11 +64,25 @@ const Chat = () => {
       socket.emit("sendMessage", message, () => setMessage(""));
     }
   };
+  const roomMembersHandler = (event) => {
+    event.preventDefault();
+    setInvite(false);
+    setRoomMembers(true);
+  };
+
+  const inviteHandler = (event) => {
+    event.preventDefault();
+    setRoomMembers(false);
+    setInvite(true);
+  };
   return (
     <div className="outerContainer">
-      <Particles params={particlesOptions} />
       <div className="container">
-        <InfoBar room={room} />
+        <InfoBar
+          room={room}
+          roomMembers={roomMembersHandler}
+          invite={inviteHandler}
+        />
         <Messages messages={messages} name={name} />
         <Input
           message={message}
@@ -84,7 +90,21 @@ const Chat = () => {
           sendMessage={sendMessage}
         />
       </div>
-      <TextContainer users={users} room={room} />
+
+      {roomMembers === true ? (
+        <div className="textSide">
+          <RoomMembers
+            users={users}
+            room={room}
+            close={() => setRoomMembers(false)}
+          />
+        </div>
+      ) : null}
+      {invite === true ? (
+        <div className="textSide">
+          <InviteLink room={room} close={() => setInvite(false)} />
+        </div>
+      ) : null}
     </div>
   );
 };

@@ -9,7 +9,7 @@ const Join = () => {
   return (
     <div className="joinOuterContainer">
       <div className="joinInnerContainer">
-        <h1 className="heading">Join Chat Room</h1>
+        <h1 className="joinHeading">Join Chat Room</h1>
         <div>
           <input
             placeholder="Name"
@@ -30,7 +30,7 @@ const Join = () => {
               !name || !room ? event.preventDefault() : null
             }
           >
-            <button className="button mt-20" type="submit">
+            <button className="joinButton mt-20" type="submit">
               {" "}
               Join{" "}
             </button>

@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+
 import closeIcon from "../../icon/closeIcon.png";
 import onlineIcon from "../../icon/onlineIcon.png";
 
@@ -8,9 +9,10 @@ import "./textContainer.css";
 const TextContainer = ({ users, room }) => {
   /*a state to check if invitation button is clicked*/
   const [invite, setInvite] = useState(false);
+  const inviteLink = `${window.location.origin}/invite?room=${room}`;
   return (
     <div className="textContainer">
-      <div>
+      <div className="text">
         <h1>
           Gist-Chatter Application{" "}
           <span role="img" aria-label="emoji">
@@ -28,7 +30,7 @@ const TextContainer = ({ users, room }) => {
       {invite === true ? (
         <div className="invite">
           <div className="link">
-            <p> http://localhost:3000/invite?room={room}</p>
+            <p>{inviteLink}</p>
           </div>
           <div>
             <img
@@ -45,9 +47,9 @@ const TextContainer = ({ users, room }) => {
       ) : (
         <div>
           <p>
-            inviting someone to join the room?{" "}
-            <button onClick={() => setInvite(true)} className="button">
-              Click here
+            Add participants?{" "}
+            <button onClick={() => setInvite(true)} className="addButton">
+              Click here to get link
             </button>
           </p>
         </div>

@@ -1,0 +1,30 @@
+.roomMembers {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 8px 0px blue;
+  border: 1px solid;
+  border-radius: 3px;
+  margin: 4%;
+  color: white;
+  padding: 2%;
+}
+.close {
+  display: flex;
+  justify-content: right;
+  align-items: right;
+  margin-left: 94%;
+}
+.members {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.blue {
+  color: blue;
+}
+.close :hover {
+  cursor: pointer;
+}
+.close:hover {
+  cursor: pointer;
+}

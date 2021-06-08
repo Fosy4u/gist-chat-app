@@ -26,3 +26,38 @@
 .onlineIcon {
   margin-right: 5%;
 }
+
+.groupIcon {
+  margin-left: 20%;
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+.groupIconText {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: -1;
+}
+.groupIcon:hover .groupIconText {
+  visibility: visible;
+}
+.groupIcon:hover {
+  cursor: pointer;
+}
+.inviteIcon {
+  align-items: flex-start;
+  padding-right: 5%;
+}
+.inviteIcon:hover {
+  cursor: pointer;
+}
+.inviteClose {
+  align-items: flex-end;
+  padding-left: 5%;
+}
