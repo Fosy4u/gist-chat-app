@@ -3,6 +3,8 @@ import Particles from "react-particles-js";
 import { Link } from "react-router-dom";
 import "./homepage.css";
 import image from "../../icon/homepage.jpg";
+
+/*configuring the params for the paricles component used for the animated background*/
 const particlesOptions = {
   particles: {
     number: {
@@ -14,6 +16,7 @@ const particlesOptions = {
     },
   },
 };
+/*Home page*/
 const Homepage = () => {
   return (
     <div className="homepage">
@@ -25,20 +28,17 @@ const Homepage = () => {
         <div className="description">
           <img src={image} alt="image" />
           <div className="about">
-            <h2>
+            <h3>
               A Real-Time Chat Application for testing Socket.IO with React and
               Nodejs
-            </h2>
+            </h3>
+            <Link to={"/create"}>
+              <div className="card create container">Create a Chat Room</div>
+            </Link>
+            <Link to={"/join"}>
+              <div className="card join container">Join a Chat Room</div>
+            </Link>
           </div>
-        </div>
-
-        <div className="cardContainer">
-          <Link to={"/create"}>
-            <div className="card create container">Create a Chat Room</div>
-          </Link>
-          <Link to={"/join"}>
-            <div className="card join container">Join a Chat Room</div>
-          </Link>
         </div>
       </div>
     </div>

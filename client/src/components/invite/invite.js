@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import queryString from "query-string";
 import "./invite.css";
+
+/*handles invitation to a chat room*/
 const Invite = () => {
+  /*using state to capture user name and room respectively*/
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
   useEffect(() => {

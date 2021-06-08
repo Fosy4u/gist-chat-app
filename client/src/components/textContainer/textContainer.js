@@ -4,8 +4,9 @@ import closeIcon from "../../icon/closeIcon.png";
 import onlineIcon from "../../icon/onlineIcon.png";
 
 import "./textContainer.css";
-
+/*component displayed on the chat screen. it describes the purpose of this application, list current users in the room and a link to invite others*/
 const TextContainer = ({ users, room }) => {
+  /*a state to check if invitation button is clicked*/
   const [invite, setInvite] = useState(false);
   return (
     <div className="textContainer">
@@ -17,7 +18,7 @@ const TextContainer = ({ users, room }) => {
           </span>
         </h1>
         <h2>
-          A real-time chat application I created to test Socket.IO{" "}
+          A real-time chat application to test Socket.IO{" "}
           <span role="img" aria-label="emoji">
             ❤️
           </span>
@@ -53,15 +54,15 @@ const TextContainer = ({ users, room }) => {
       )}
       {users ? (
         <div>
-          <h1 className="green">People currently chatting:</h1>
+          <h3 className="green">People currently in the room:</h3>
           <div className="activeContainer">
-            <h2>
+            <p>
               {users.map(({ name }) => (
                 <ul key={name} className="activeItem">
                   <li>{name}</li>
                 </ul>
               ))}
-            </h2>
+            </p>
           </div>
         </div>
       ) : null}

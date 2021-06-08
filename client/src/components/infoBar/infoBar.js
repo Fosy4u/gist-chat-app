@@ -3,6 +3,7 @@ import "./infoBar.css";
 import onlineIcon from "../../icon/onlineIcon.png";
 import closeIcon from "../../icon/closeIcon.png";
 
+/*the inforbar on the chat screen - will show online icon, room name and a close button that disconnects user from the room*/
 const InfoBar = ({ room }) => {
   return (
     <div className="infoBar">
