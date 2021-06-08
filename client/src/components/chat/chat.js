@@ -6,7 +6,6 @@ import "./chat.css";
 import InfoBar from "../infoBar/infoBar";
 import Input from "../input/input";
 import Messages from "../../messages/messages";
-import TextContainer from "../textContainer/textContainer";
 
 import { useHistory } from "react-router-dom";
 import RoomMembers from "../roomMembers/roomMembers";
@@ -27,7 +26,7 @@ const Chat = () => {
   const [roomMembers, setRoomMembers] = useState(false);
   const [invite, setInvite] = useState(false);
   /*Endpoint to the server deployed on Heroku*/
-  const ENDPOINT = "https://gist-chatter.herokuapp.com/";
+  const ENDPOINT = "localhost:5000/";
 
   useEffect(() => {
     /*getting the user's name and the room from the url*/

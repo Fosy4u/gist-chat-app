@@ -8,11 +8,11 @@ const Messages = ({ messages, name }) => {
   return (
     /*using scrollToBottom to make the chat scrollable*/
     <ScrollToBottom className="messages">
-      {messages.map((message, i) => (
+      {messages? messages.map((message, i) => (
         <div key={i}>
           <Message message={message} name={name} />
         </div>
-      ))}
+      )): <div>Loading.....</div>}
     </ScrollToBottom>
   );
 };

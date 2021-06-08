@@ -1,7 +1,7 @@
 import React from "react";
 import "./input.css";
 
-/*The input component in the chat screen - to capture user chat inputs*/
+/*The input component in the chat screen - to capture user chat*/
 const Input = ({ message, setMessage, sendMessage }) => {
   return (
     <form className="form">
